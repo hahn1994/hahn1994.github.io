@@ -2,10 +2,11 @@
 title: Hahn's MindPlace
 email: xingshihan@hotmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Hahn的思维殿堂
+  Hahn Xing的思维殿堂
   个人随笔、技术笔记、黑鸡汤
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://hahn1994.github.io/" # the base hostname & protocol for your site
+permalink: /404.html
 
 
 # Sidebar filter
@@ -36,4 +37,6 @@ sass:
 gems:
   - jekyll-sitemap
 
+# Global settings
 encoding: UTF-8
+timezone: Asia/Shanghai
