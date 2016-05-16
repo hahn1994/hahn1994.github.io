@@ -1,23 +1,21 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: Hahn's Think Space
+email: xingshihan@hotmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Hahn的思维殿堂
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://hahn1994.github.io/" # the base hostname & protocol for your site
 
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
-filter: 'tag'
+filter: 'category'
 
 
 # Social account
 # twitter:  username
 # weibo:    ID
-# github:   username
+github:   hahn1994
 # codepen:  username
 # dribbble: username
 
