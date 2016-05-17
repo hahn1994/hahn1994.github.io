@@ -1,6 +1,7 @@
 ---
-layout: post
-title:  "开题篇"
+layout:     post
+title:      开题篇
+date:       2016 May 16 21:02:00
 categories: 个人杂记
 ---
 
