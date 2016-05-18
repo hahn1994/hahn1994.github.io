@@ -3,6 +3,7 @@ layout:     post
 title:      开题篇
 date:       2016 May 16 21:02:00
 categories: 个人杂记
+tags:       Jekyll 博客 开篇
 ---
 
 前几天浏览网页，发现很多人在Github上写Blog，这是非常酷的一件事！很Geek！然后就开始研究静态Blog怎么写，于是就诞生了这个Blog。
