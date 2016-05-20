@@ -6,7 +6,7 @@ category: iOS
 tags:     iOS 手势识别 状态机 UIGestureRecognizer
 ---
 
-	iOS的手势识别模型其实是一个状态机
+> iOS的手势识别模型其实是一个状态机
 
 ### 手势识别状态
 
