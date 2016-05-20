@@ -1,28 +1,32 @@
+# Global settings
+encoding:          UTF-8
+timezone:          Asia/Shanghai
+
 # Site settings
-title: Hahn's MindPlace
-email: xingshihan@hotmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Hahn Xing的思维殿堂
-  个人随笔、技术笔记、黑鸡汤
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://hahn1994.github.io/" # the base hostname & protocol for your site
+title:             Hahn's MindPlace
+email:             xingshihan@hotmail.com
+description:       > 
+                   Hahn Xing的思维殿堂
+                   个人随笔、技术笔记、黑鸡汤
+baseurl:           "" # the subpath of your site, e.g. /blog/
+url:               "http://hahn1994.github.io/" # the base hostname & protocol for your site
 
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
-filter: 'category'
+filter:            'category'
 
 
 # Social account
-weibo:    hahn1994
-github:   hahn1994
-# twitter:  username
-# codepen:  username
-# dribbble: username
+weibo:              hahn1994
+github:             hahn1994
+# twitter:          username
+# codepen:          username
+# dribbble:         username
 
 
 # Comment
-disqus_shortname: hahn1994
+disqus_shortname:   hahn1994
 
 
 # Google Analytics
@@ -30,7 +34,7 @@ disqus_shortname: hahn1994
 
 
 # Build settings
-permalink:          /:title/
+permalink:          /:categories/:title.html
 markdown:           kramdown
 highlighter:        rouge
 markdown_ext:       "markdown,mkdown,mkdn,mkd,md"
@@ -50,9 +54,4 @@ gems:
   - jekyll-mentions
   
 jekyll-mentions:
-    base_url: https://github.com
-
-
-# Global settings
-encoding: UTF-8
-timezone: Asia/Shanghai
+    base_url:       https://github.com

@@ -10,18 +10,20 @@ tags:     UIImage iOS 图片加载
 
 ## 常见的图片加载方式有下面三种
 
-    // 方法1  
-    // imageNamed:
-    UIImage *imag1 = [UIImage imageNamed:@"image.png"];  
+{% highlight objc %}
+// 方法1  
+// imageNamed:
+UIImage *imag1 = [UIImage imageNamed:@"image.png"];  
 
-    // 方法2  
-    // imageWithContentsOfFile:pathForResource:ofType:
-    UIImage *image2 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image.png" ofType:nil]];  
+// 方法2  
+// imageWithContentsOfFile:pathForResource:ofType:
+UIImage *image2 = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image.png" ofType:nil]];  
 
-    // 方法3  
-    // dataWithContentsOfFile:pathForResource:ofType:
-    NSData *imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image.png" ofType:nil]];  
-    UIImage *image3 = [UIImage imageWithData:imageData];  
+// 方法3  
+// dataWithContentsOfFile:pathForResource:ofType:
+NSData *imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image.png" ofType:nil]];  
+UIImage *image3 = [UIImage imageWithData:imageData]; 
+{% endhighlight %}
 
 ## 第一种方法:imageNamed:
 

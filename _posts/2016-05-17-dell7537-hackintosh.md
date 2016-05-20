@@ -6,7 +6,7 @@ categories: Hacintosh
 tags:       dell hacintosh 7537 黑苹果教程
 ---
 
-☞ [View on Github](https://github.com/hahn1994/Dell7537_Laptop_Hackintosh)
+> 在这里可以查看整个项目的文件→[Dell-7537-Hacintosh](https://github.com/hahn1994/Dell7537_Laptop_Hackintosh)
 
 *****
 
@@ -46,7 +46,6 @@ tags:       dell hacintosh 7537 黑苹果教程
 4. Clover引导
 5. 认真阅读此文档！
 6. 最新版BIOS(我的版本是A13) 并确保设置了以下参数
-
 	- Disk:AHCI
 	- Intel Rapid Storage:Disabled
 	- UEFI Boot:Enabled
@@ -121,20 +120,19 @@ tags:       dell hacintosh 7537 黑苹果教程
 ##### 准备工作
 
 - 去U盘 `CLOVER/ACPI/origin` 文件夹中。
-
 	- 找到以**DSDT**和**SSDT**开头的所有ACPI文件(后缀名为.aml)。
 	- 将他们复制到我们桌面一个新建的`DSDT`文件夹。
 	- 同样的将`refs.txt`放到`DSDT`文件夹。
-
 - 将`iasl`文件放到 `/usr/bin` 目录下。
-
-	- 打开终端，输入下面命令:
-	```
-	cd ~/Desktop/DSDT
-	iasl -da -dl -fe refs.txt *.aml
-	```
+	- 打开终端，输入下面命令
 	- 等待命令执行完成，我们会得到后缀名为.dsl的反编译文件。
 	- 下载RehabMan提供的[MaciASL](https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads)，用它来编辑我们的dsl文件。
+
+{% highlight bash %}
+cd ~/Desktop/DSDT
+iasl -da -dl -fe refs.txt *.aml
+{% endhighlight %}
+	
 
 ##### 给DSDT打补丁
 
@@ -148,39 +146,22 @@ tags:       dell hacintosh 7537 黑苹果教程
 - 点击`Patch`，在左侧对话框中选择下面的补丁并应用:
 
 		Rename GFX0 to IGPU
-
 		USB3 _PRW(0x6D)
-
 		7/8-series USB
-
 		SMBUS Fix
-
 		RTC Fix
-
 		Shutdown Fix 2
-
 		HPET Fix
-
 		OS Check Fix(Windows 8)
-
 		AC Adapter Fix
-
 		Add MCHC
-
 		Fix _WAK arg0 2
-
 		Fix PNOT/PPNT
-
 		Add IMEI
-
 		Fix _WAK IAOE
-
 		Rename B0D3 to HDAU
-
 		IRQ Fix
-
 		Disable/Enable on _WAK/_PTS(DSDT)
-
 
 - 关闭`Patch`页面，然后再次点击`Compile`，如果没有报错，继续点击`Patch`，将`DSDT-Brightness.txt`的内容粘贴进去，点击应用。
 - (这一步 For 10.11)关闭`Patch`页面，然后再次点击`Compile`，如果没有报错，继续点击`Patch`，将`DSDT-USB-Rename.txt`的内容粘贴进去，点击应用。
@@ -191,11 +172,8 @@ tags:       dell hacintosh 7537 黑苹果教程
 - 在`DSDT`文件夹中找到**`SSDT-7.dsl`**,用MaciASL打开它，然后`Patch`以下补丁:
 
 		Rename GFX0 to IGPU
-
 		Haswell HD4400/HD4600/HD5000
-
 		Brightness fix (Haswell/broadwell)
-
 		Rename B0D3 to HDAU
 
 - 点击`Compile`，如果没有报错可以保存为.dsl文件，再另存为名为**`SSDT-1.aml`**，保存到文件夹`patches`中。
@@ -206,7 +184,6 @@ tags:       dell hacintosh 7537 黑苹果教程
 #### 五、安装其他驱动
 
 - 为了让黑苹果更加完美，我们需要安装一些驱动让系统更好的工作，驱动列表如下:
-
 	- `ACPIBacklight.kext` (可选驱动，如果亮度调节正常可以不装，这个驱动帮助黑苹果更平滑的调节亮度)
 	- `ACPIBatteryManager.kext` (必备，电池状态补丁)
 	- `AppleHDA.kext` (可选，这是 ALC283 的仿冒驱动，需要DSDT或者Clover注入layout-id=3，可自行选择VoodooHDA替代)
@@ -216,7 +193,6 @@ tags:       dell hacintosh 7537 黑苹果教程
 	- `FakeSMC.kext` (必备，原因不作说明)
 	- `VoodooPS2Controller.kext` (必备，黑苹果键鼠和触控板驱动，支持二指、三指操作)
 	- `USBXHC_Dell7537.kext` (这个和 FakePCIID_XHCIMux.kext 请二选一，两者同时用会导致USB不能识别)
-
 - 以上驱动统一安装至 `/Library/Extentions` 下，然后修复权限并重建缓存
 - 安装驱动的软件推荐`KCPM Utillity Pro` v5.1
 - 安装前需要删除 `/System/Library/Extentions` 目录下的AppleHDA.kext、AppleACPIPS2Nub.kext、ApplePS2Controller.kext，请做好备份并删除！
@@ -224,38 +200,29 @@ tags:       dell hacintosh 7537 黑苹果教程
 #### 六、更改睡眠模式
 
 - 打开终端输入
-```
+
+{% highlight bash %}
 sudo pmset -a hibernatemode 0
 sudo rm /var/vm/sleepimage
-```
-
+{% endhighlight %}
 
 #### 七、驱动 BCM94352HMB
 
 - 这个单独拿出来，因为Dell7537自带的无线网卡+蓝牙是Intel7260，Mac下无法驱动。所以我上手换了一款博通94352HMB的半高卡，很容易，在风扇左下的位置。
-
 - 如果没有这款网卡的朋友就不要安装这个驱动了，更低成本的选择是Realtek的USB无线网卡(RTL8191\8192)。
-
 - 驱动无线需要
-
 	- FakePCIID_Broadcom_WiFi.kext
 	- FakePCIID.kext
-
 - 驱动蓝牙需要
-
 	- BrcmFirmwareRepo.kext
 	- BrcmPatchRAM2.kext
-
 - 请将以上驱动安放在 `/Library/Extentions` 下，然后修复权限并重建缓存。
-
 - 同时配合 Clover 的 *KextsToPatch* 补丁，可以让 BCM94352HMB 在Mac下开启*5Ghz*频段和*Handoff*功能
 
 #### 八、修复不能登录AppStore和iCloud的错误
 
 - 如果使用USB网卡或者用手机USB共享网络，可能会出现无法访问App Store或iCloud的情况，这时候我们需要*重置网络*。
-
 - 去系统 `/Library/Preferences/SystemConfiguration/` 目录下，找到并删除以下文件:
-
 	- CaptiveNetworkSupport
 	- com.apple.airport.preferences.plist
 	- com.apple.network.eapolclient.configuration.plist
@@ -263,7 +230,6 @@ sudo rm /var/vm/sleepimage
 	- com.apple.network.identification.plist
 	- com.apple.wifi.message-tracer.plist
 	- preferences.plist
-
 - 进入系统 `偏好设置 > 网络` 删除左侧窗口内所有连接，然后重启并在 `偏好设置 > 网络` 重新添加需要的网络连接
 
 *****
