@@ -87,14 +87,16 @@ tag:      markdown 语法 sample
 可以用HTML语法定义一个按钮，如下
 
 {% highlight html %}
-<a href="#" class="btn btn-success">这是一个按钮</a>
+<a href="#" class="btn">这是一个按钮</a>
 {% endhighlight %}
 
-<div markdown="0"><a href="#" class="btn">正常</a></div>
-<div markdown="0"><a href="#" class="btn btn-success">成功</a></div>
-<div markdown="0"><a href="#" class="btn btn-warning">警告</a></div>
-<div markdown="0"><a href="#" class="btn btn-danger">危险</a></div>
-<div markdown="0"><a href="#" class="btn btn-info">提示</a></div>
+<div markdown="0">
+<a href="#" class="btn">正常</a>
+<a href="#" class="btn btn-success">成功</a>
+<a href="#" class="btn btn-warning">警告</a>
+<a href="#" class="btn btn-danger">危险</a>
+<a href="#" class="btn btn-info">提示</a>
+</div>
 
 ## 键盘标签
 
@@ -108,5 +110,5 @@ tag:      markdown 语法 sample
 
 ## 提醒文本
 
-**注意** 我们可以用 `{: .notice}` 在文本中添加一个特别的提示信息
+**注意** 我们可以用 `{: .notice}` 在文本中添加一个特别的提示信息，当然，`{: .xx}`的用法需要我们预先在css中设置好相应的样式
 {: .notice}
