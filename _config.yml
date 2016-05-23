@@ -49,7 +49,7 @@ mathjax:            true
 sass:
   sass_dir:         _sass
   style:            compressed
-  add_charset: true
+  add_charset:      true
 gems:
   - jekyll-sitemap
   - jekyll-mentions
