@@ -1,0 +1,149 @@
+--- 
+---
+
+@charset "utf-8"
+
+// # Breakpoints
+$breakpoint-hide-sidebar: 1280px
+$breakpoint-mobile: 767px
+
+// # Font
+$font: "Open Sans", "Hiragino Sans GB", sans-serif
+
+// # Sidebar Background Gradient
+$gradient-start: #40E0D0
+$gradient-end: #4682B4
+$sidebar-bg: linear-gradient(136deg, $gradient-start, $gradient-end)
+
+// # Sidebar Left
+$sidebar-left-width: 150px
+
+// Avatar
+$avatar-size: 128px
+$avatar-border-size: 0px
+$avatar-border-color: rgba(255, 255, 255, 0.75)
+
+// Social icons
+$social-icon-outer-padding: 10px
+$social-icon-size: 22px
+$social-icon-margin: 1px
+$social-icon-color: rgba(255, 255, 255, 0.6)
+$social-icon-hover-color: #FFF
+
+// Tags
+$tag-height: 50px
+$tag-font-size: 17px
+$tag-color: rgba(255, 255, 255, 0.7)
+$tag-hover-color: rgba(255, 255, 255, 0.85)
+$tag-active-color: $gradient-end
+$tag-border-color: rgba(255, 255, 255, 0.5)
+
+// # Sidebar Right
+$sidebar-right-width: 350px
+
+// Search
+$search-box-height: 64px
+$search-box-font-size: 18px
+$search-box-color: #FFF
+$search-box-placeholder: rgba(255, 255, 255, 0.7)
+$search-box-bg: rgba(255, 255, 255, 0.3)
+
+// Toc
+$toc-color: #55606F
+$toc-bg: $tag-border-color
+$toc-font-size: 16px
+$toc-line-height: 22px
+$toc-bullet-size: 18px
+$toc-bullet-unread: $gradient-end
+$toc-bullet-read: $toc-color
+
+// # Sidebar width
+$sidebar-width: $sidebar-left-width + $sidebar-right-width + 1
+
+// # Post
+$post-max-width: 800px
+$post-width-at-3-columns: 80%
+$post-width-at-1-column: 720px
+$post-meta-color: #BCC1C4
+$post-title-color: #283444
+$post-text-color: #283444
+$post-link-color: lighten($post-text-color, 20%)
+$post-link-hover-color: $gradient-end
+$post-bg: #F8F8F8
+$post-img-border-color: darken($post-bg, 4%)
+$post-img-border-width: 4px
+$post-code-inline-color: lighten($post-text-color, 10%)
+$post-code-inline-bg: darken($post-bg, 2%)
+$post-code-font: "Droid Sans Mono", monospace
+$post-code-block-bg: #FDFDFD
+$post-font-size: 18px
+$post-line-height: 1.6
+$post-paragraph-spacing: 30px
+$post-hr-color: darken($post-bg, 5%)
+$post-share-bg: $post-bg
+$post-share-color: $post-meta-color
+$post-share-hover-color: $gradient-end
+
+// # Footer (copyright)
+$footer-color: $post-meta-color
+$footer-link-hover-color: $gradient-end
+$footer-font-size: 14px
+$footer-line-height: 20px
+
+// # Menu button position
+$menu-top: 20px
+$menu-right: 30px
+
+// # Customise webkit scrollbar
+$toc-scrollbar-width: 3px
+$toc-scrollbar-color: $gradient-end
+$code-scrollbar-height: 7px
+$code-scrollbar-color: $post-meta-color
+
+// # NProgerss
+$nprogress-height: 3px
+$nprogress-color: #1E90FF
+
+// # Time function
+$time-function: cubic-bezier(0.77, 0, 0.175, 1)
+
+// # Other Colors
+$bodycolor: #D24D57
+$black: #000
+$white: #fff
+$color_gray: #e8e8e8
+$red: #FF4136
+$maroon: #85144b
+$color_tuatara: #383838
+$color_shark: #282828
+$color_mischka: #d0d1d5
+$color_mercury: #e5e6e9
+$color_bon_jour: #dfe0e4
+$color_gallery: #f0f0f0
+$color_stack: #8c8b8b
+$color_alabaster: #f9f9f9
+$color_tundora: #444
+$color_fuscous_gray: #555
+$color_alabaster: #fcfcfc
+$color_celeste: #ccc
+$color_pink_swan: #bbb
+$comp-color: #222
+
+//button colors
+$success: #5cb85c
+$warning: #dd8338
+$danger: #C64537
+$info: #308cbc
+
+// @import
+@import 1-animation
+@import 2-icon
+@import 3-base
+@import 4-sidebar
+@import 5-post
+@import 6-menu
+@import 7-nprogress
+@import 8-code
+@import 9-page
+@import a-smallscreen
+@import b-mobile
