@@ -24,7 +24,7 @@ tags:     懒加载 iOS 延迟加载
 
 - 没用懒加载的时候，从plist获取数据，返回一个数组，需要写在viewDidLoad方法中获取
 
-{% highlight objective-c %}
+{% highlight objc %}
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *shopData;
 @end
@@ -41,7 +41,7 @@ tags:     懒加载 iOS 延迟加载
 
 ## 使用懒加载代码示例
 
-{% highlight objective-c %}
+{% highlight objc %}
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
