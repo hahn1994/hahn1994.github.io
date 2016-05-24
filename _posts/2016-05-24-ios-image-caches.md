@@ -66,7 +66,7 @@ UIImage *image=[UIImage imageWithData:
     - **注**：因为URL包含特殊字符和长度不确定，要对URL进行MD5处理或其他处理
 
 ### 下面是针对以上步骤的代码讲解：
-1. 内存缓存图片处理
+- 内存缓存图片处理
     - 使用NSMutableDictionary存储图片UIImage，数组的Key为该图片的URL地址
 
 {% highlight objc %}
@@ -74,9 +74,9 @@ UIImage *image=[UIImage imageWithData:
 [memCache setObject:image forKey:key];  
 {% endhighlight %}
 
-2. 物理缓存图片处理
+- 物理缓存图片处理
     - 把图片保持到物理存储设备上，则直接使用NSFileManager，把URL作为文件名保存
-3. 网络图片下载处理
+- 网络图片下载处理
     - 图片使用异步下载，下载完后把图片保持到NSMutableDictionary和物理存储上
 
 *****
