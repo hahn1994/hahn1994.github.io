@@ -3,7 +3,7 @@ layout:   post
 title:    Markdown语法简介
 date:     2016 May 20 21:49:53
 category: 个人杂记
-tag:      markdown 语法 sample
+tags:     markdown 语法 sample
 ---
 
 > 本文转载自[Moon](http://taylantatli.me/Moon/markdown-syntax/)
