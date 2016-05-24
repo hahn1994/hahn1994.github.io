@@ -53,6 +53,5 @@ sass:
 gems:
   - jekyll-sitemap
   - jekyll-mentions
-  - jekyll-sass-converter
 jekyll-mentions:
     base_url:       https://github.com
