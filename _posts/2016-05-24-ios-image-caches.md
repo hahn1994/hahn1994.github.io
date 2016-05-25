@@ -83,7 +83,14 @@ UIImage *image=[UIImage imageWithData:
 
 ## 三、SDWebImage类库的处理方式
 
-- SDWebImages是一个在网络图片缓存处理上比较好的第三方类库，下面是一部分源码解析
+- SDWebImages是一个在网络图片缓存处理上比较好的第三方类库
+- 特点：
+    - 依赖的库很少.功能全面。
+    - 自动实现磁盘缓存:
+    - 缓存图片名字是以MD5进行加密的后的名字进行命名.(因为加密那堆字串是唯一的)
+    - [imageViewsd_setImageWithURL:v.fullImageURL placeholderImage:[UIImage imageNamed:@”xxxxx”]].
+    - 就一个方法就实现了多线程\带缓冲等效果.(可用带参数的方法,具体可看头文件)
+- 下面是一部分源码解析
 
 ### SDImageCache.h文件:
 
@@ -456,3 +463,15 @@ UIImage *image=[UIImage imageWithData:
 }
 @end
 {% endhighlight %}
+
+- SDWebImage中的一些参数：
+    - SDWebImageRetryFailed = 1<< 0,   默认选项，失败后重试
+    - SDWebImageLowPriority = 1<< 1,    使用低优先级
+    - SDWebImageCacheMemoryOnly = 1<< 2,   仅仅使用内存缓存
+    - SDWebImageProgressiveDownload = 1<< 3,   显示现在进度
+    - SDWebImageRefreshCached = 1<< 4,    刷新缓存
+    - SDWebImageContinueInBackground =1 << 5,   后台继续下载图像
+    - SDWebImageHandleCookies = 1<< 6,    处理Cookie
+    - SDWebImageAllowInvalidSSLCertificates= 1 << 7,    允许无效的SSL验证
+    - SDWebImageHighPriority = 1<< 8,     高优先级
+    - SDWebImageDelayPlaceholder = 1<< 9     延迟显示占位图片
